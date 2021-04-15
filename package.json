@@ -1,0 +1,26 @@
+{
+  "name": "maybeline_cosmetics",
+  "version": "1.0.0",
+  "description": "A project that integrated Frontend and Backend",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santiagonk/Maybeline_Cosmetics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Santiagonk/Maybeline_Cosmetics/issues"
+  },
+  "homepage": "https://github.com/Santiagonk/Maybeline_Cosmetics#readme"
+}
