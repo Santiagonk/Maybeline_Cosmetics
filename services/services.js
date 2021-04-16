@@ -1,12 +1,18 @@
 const productsMocks = require("../utils/mocks/mocksproducts");
+const MongoLib = require("../lib/mongo");
+
+
 // The class is because in the constructure the cliente can connect - clase para en el futuro el cliente al conectar se instancia
 class ProductsService {
     constructor() {
-
+        this.collection = "products";
+        this.mongoDB = new MongoLib;
     }
 //GET
-    getProducts({ tags }) {
-        return Promise.resolve(productsMocks);
+    async getProducts({ tags }) {
+        const query = tags && { tags: { $in: tags}};
+        const products = await this.mongoDB.getAll(this.collection, query);
+        return products || [];
     }
 //GET product
     getProduct({ productId }) {

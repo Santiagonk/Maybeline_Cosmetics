@@ -8,6 +8,7 @@ const productService = new ProductsService();
 router.get("/", async function(req, res, next) {
     const { tags } = req.query;
     console.log("request: ", req.query);
+    console.log("tags: ", {tags});
     try {
       const products = await productService.getProducts({ tags });
   
@@ -37,7 +38,7 @@ router.get("/:productId", async function(req, res, next) {
 //POST
 router.post("/", async function(req, res, next) {
     const { body: product } = req;
-    console.log("request: ", req.body);
+    console.log("request: ", req);
     try {
       const createdProduct = await productService.createProduct({ product });
   
