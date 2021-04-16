@@ -6,11 +6,10 @@ const ProductsService = require("../../services/services");
 const productService = new ProductsService();
 // GET
 router.get("/", async function(req, res, next) {
-    const { tags } = req.query;
-    console.log("request: ", req.query);
-    console.log("tags: ", {tags});
+    const { category, product_type, tag_list } = req.query;    
+    console.log("Query: : ", req.query);    
     try {
-      const products = await productService.getProducts({ tags });
+      const products = await productService.getProducts({ category, product_type, tag_list});
   
       res.status(200).json({
         data: products,

@@ -1,0 +1,8 @@
+{category: "lip_gloss", product_type: "lipstick", tag_list: {$in: ["Vegan"]}}
+
+{category: "lip_gloss", product_type: "lipstick"}
+
+{category: "lip_gloss", tag_list: {$in: ["Vegan"]}}
+
+{product_type: "lipstick", tag_list: {$in: ["Vegan"]}}
+
