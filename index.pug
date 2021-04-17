@@ -6,24 +6,40 @@ html
 		title Maybellin Cometics
 	body 
 		header
-			figure
-				img.button(src="IMG/home.png")
-			figure
+			figure: a(href="url")
+				img(src="IMG/home.png")
+			figure: a(href="url")
 				img.logo(src="IMG/logoMNY.png")
-			figure
-				img.button(src="IMG/add_shopping_cart.png")
-			figure
-				img.button(src="IMG/user.png")
+			figure: a(href="url")
+				img(src="IMG/add_shopping_cart.png")
+			figure: a(href="url")
+				img(src="IMG/user.png")
 		main 
 			.side_menu 
-			.product
+				dl
+					dt.side_menu_item: a(href="url") Category
+						dd.side_menu_subitem: a(href="url")  Blush 
+						dd.side_menu_subitem: a(href="url")  Bronzer 
+						dd.side_menu_subitem: a(href="url")  Eyebrow 
+						dd.side_menu_subitem: a(href="url")  Eyeliner 
+						dd.side_menu_subitem: a(href="url")  Eyeshadow 
+						dd.side_menu_subitem: a(href="url")  Foundation 
+						dd.side_menu_subitem: a(href="url")  Lip Liner 
+						dd.side_menu_subitem: a(href="url")  Lipstick 
+						dd.side_menu_subitem: a(href="url")  Mascara 
+						dd.side_menu_subitem: a(href="url")  Nail polish
+					dt.side_menu_item: a(href="url") Type 
+					dt.side_menu_item: a(href="url") Brand
+			.element
 				.product_image
 					figure
-						img.img_product(src="IMG/imagen.png")
+						img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg")
 				.product_info
 					span
-						p Product: 
-						p Brand:
-						p Price:
+						p Product: Lorem Ipsum
+						p Brand: Rerum sapiente consequatur
+						p Price: $$$$
 					a.boton BUY
 		footer
+			span 
+				p Created by Platzi Masters C7
