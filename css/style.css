@@ -48,8 +48,8 @@ main{
 }
 .element{
     display: flex;
-    width: 30rem;
-    height: 50rem;
+    width: 25rem;
+    height: 40rem;
     margin: 0 1.5rem;
     border: solid black .1rem; 
     border-radius: 4rem;
@@ -58,8 +58,8 @@ main{
     align-items: center;
 }
 .img_product{
-    width: 25rem;
-    height: 25rem;
+    width: 15rem;
+    height: 15rem;
     border-radius: 100%;
     border: solid black .1rem;
 }
