@@ -1,30 +1,5 @@
--var menu_category_subitems = ["Blush", "Bronzer", "Eyebrow", "Eyeliner", "Eyeshadow", "Foundation", "Lip liner", "Lipstick", "Mascara", "Nail polish"]  
-mixin element
-	.element
-		.product_image
-			figure
-				img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg")
-		.product_info
-			span
-				p Product:
-				span.product_name 
-				p Brand:
-				p Price:
-				.boton: a(href="url") BUY
-
-doctype html 
-html 
-	include components/head.pug
-	body 
-		header
-			figure: a(href="url")
-				img(src="IMG/home.png")
-			figure: a(href="url")
-				img.logo(src="IMG/logoMNY.png")
-			figure: a(href="url")
-				img(src="IMG/add_shopping_cart.png")
-			figure: a(href="url")
-				img(src="IMG/user.png")
+extend components/header.pug
+block contents
 		main 
 			.side_menu
 				dl 
@@ -35,6 +10,4 @@ html
 					dt.side_menu_item: a(href="url") Brand
 			.content 
 				+element
-		footer
-			span 
-				p Created by Platzi Masters C7 💚
+		include components/footer.pug
