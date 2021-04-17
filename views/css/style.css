@@ -56,7 +56,7 @@ main{
     display: flex;
     width: 25rem;
     height: 40rem;
-    margin: 0 1.5rem;
+    margin: 1.5rem 1.5rem 0 0;
     border: solid black .1rem; 
     border-radius: 4rem;
     flex-direction: column;
@@ -94,8 +94,8 @@ footer{
     height: 10rem;
     padding: 2rem;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
 
