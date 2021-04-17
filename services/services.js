@@ -1,5 +1,7 @@
 const productsMocks = require("../utils/mocks/mocksproducts");
 const MongoLib = require("../lib/mongo");
+const { ObjectId } = require("bson");
+
 
 
 // The class is because in the constructure the cliente can connect - clase para en el futuro el cliente al conectar se instancia
@@ -84,7 +86,8 @@ class ProductsService {
         return products || [];
     }
 //GET product
-    async getProduct({ productId }) {
+    async getProduct({ productId }) {   
+        
         const product = await this.mongoDB.get(this.collection, productId);
         return product || {};
     }
@@ -104,16 +107,14 @@ class ProductsService {
         );
     return updateProductId;
     }
-//PATCH
-    patchProduct({ productId, changedAttributes }) {
-        return Promise.resolve(productsMocks[0]);
-    }
-    async patchProduct({ productId, product }) {
-        console.log("Message in Services")  
+//PATCH   
+    async patchProduct({ productId, price }) {
+
+        console.log("product", price)  
         const updateProductId = await this.mongoDB.update(
             this.collection,
             productId,
-            product
+            price
         );
     return updateProductId;
     }

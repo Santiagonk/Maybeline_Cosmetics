@@ -37,7 +37,7 @@ router.get("/:productId", async function(req, res, next) {
 //POST
 router.post("/", async function(req, res, next) {
     const { body: product } = req;
-    console.log("request: ", req);
+    console.log("request: ", product);
     try {
       const createdProduct = await productService.createProduct({ product });
   
@@ -70,10 +70,11 @@ router.put("/:productId", async function(req, res, next) {
 // PATCH (funcionalidad por probar)
 router.patch('/:productId', async function (req, res, next) {
     const { productId } = req.params;
-    const { body: changedAttributes } = req;
+    const { price } = req.query;    
+    console.log("Query: : ", req.query); 
     console.log("request: ", req.params, req.body);
     try {
-      const patchedProduct = await productService.patchProduct({ productId, changedAttributes })
+      const patchedProduct = await productService.patchProduct({ productId, price })
   
       res.status(200).json({
         data: patchedProduct,
