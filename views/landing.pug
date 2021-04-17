@@ -6,7 +6,8 @@ mixin element
 				img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg")
 		.product_info
 			span
-				p Product: 
+				p Product:
+				span.product_name 
 				p Brand:
 				p Price:
 				.boton: a(href="url") BUY
@@ -33,9 +34,6 @@ html
 					dt.side_menu_item: a(href="url") Type 
 					dt.side_menu_item: a(href="url") Brand
 			.content 
-				+element
-				+element
-				+element
 				+element
 		footer
 			span 
