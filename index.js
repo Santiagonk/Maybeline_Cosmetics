@@ -15,7 +15,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 // static files
-app.use("/views",express.static(path.join(__dirname, "views")));
+app.use("/main",express.static(path.join(__dirname, "views")));
 
 // View engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -24,9 +24,9 @@ app.set("view engine", "pug");
 // routes 
 app.use("/api/v1/products", productsApiRouter);
 app.use("/products", productsRouter);
-redirect
+//redirect
 app.get('/', function(req, res){
-   res.redirect('/products');   
+   res.redirect('/main/landing.html');   
 });
 
 // Indicate the server that listen port - Indicar al servidor el puerto que va a escuchar
