@@ -1,3 +1,6 @@
+
+-var menu_category_subitems = ["Blush", "Bronzer", "Eyebrow", "Eyeliner", "Eyeshadow", "Foundation", "Lip liner", "Lipstick", "Mascara", "Nail polish"]  
+
 doctype html 
 html 
 	head 
@@ -15,21 +18,13 @@ html
 			figure: a(href="url")
 				img(src="IMG/user.png")
 		main 
-			.side_menu 
-				dl
+			.side_menu
+				dl 
 					dt.side_menu_item: a(href="url") Category
-						dd.side_menu_subitem: a(href="url")  Blush 
-						dd.side_menu_subitem: a(href="url")  Bronzer 
-						dd.side_menu_subitem: a(href="url")  Eyebrow 
-						dd.side_menu_subitem: a(href="url")  Eyeliner 
-						dd.side_menu_subitem: a(href="url")  Eyeshadow 
-						dd.side_menu_subitem: a(href="url")  Foundation 
-						dd.side_menu_subitem: a(href="url")  Lip Liner 
-						dd.side_menu_subitem: a(href="url")  Lipstick 
-						dd.side_menu_subitem: a(href="url")  Mascara 
-						dd.side_menu_subitem: a(href="url")  Nail polish
+						each subitem in menu_category_subitems 	
+							dd.side_menu_subitem: a(href="url")=subitem
 					dt.side_menu_item: a(href="url") Type 
-					dt.side_menu_item: a(href="url") Brand
+					dt.side_menu_item: a(href="url") Brand	
 			.element
 				.product_image
 					figure
@@ -39,7 +34,8 @@ html
 						p Product: Lorem Ipsum
 						p Brand: Rerum sapiente consequatur
 						p Price: $$$$
-					a.boton BUY
+					.boton: a(href="url") BUY
+						 
 		footer
 			span 
 				p Created by Platzi Masters C7
