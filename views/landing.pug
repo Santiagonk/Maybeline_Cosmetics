@@ -1,5 +1,16 @@
 
 -var menu_category_subitems = ["Blush", "Bronzer", "Eyebrow", "Eyeliner", "Eyeshadow", "Foundation", "Lip liner", "Lipstick", "Mascara", "Nail polish"]  
+mixin element
+	.element
+				.product_image
+					figure
+						img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg")
+				.product_info
+					span
+						p Product: Lorem Ipsum
+						p Brand: Rerum sapiente consequatur
+						p Price: $$$$
+					.boton: a(href="url") BUY
 
 doctype html 
 html 
@@ -24,17 +35,15 @@ html
 						each subitem in menu_category_subitems 	
 							dd.side_menu_subitem: a(href="url")=subitem
 					dt.side_menu_item: a(href="url") Type 
-					dt.side_menu_item: a(href="url") Brand	
-			.element
-				.product_image
-					figure
-						img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg")
-				.product_info
-					span
-						p Product: Lorem Ipsum
-						p Brand: Rerum sapiente consequatur
-						p Price: $$$$
-					.boton: a(href="url") BUY
+					dt.side_menu_item: a(href="url") Brand
+			.content 
+				+element
+				+element 
+				+element
+				+element
+				+element 
+				+element
+			
 						 
 		footer
 			span 
