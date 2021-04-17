@@ -9,13 +9,13 @@ class ProductsService {
         this.mongoDB = new MongoLib;
     }
 //GET
-    async getProducts({ category, product_type, tag_list }) { //product_category, product_type, product_tags              
+    async getProducts({ category, product_type, tag_list , brand}) { //product_category, product_type, product_tags              
         // console.log("Category: ", typeof (category));    
         // console.log("Type: ", product_type );
         // console.log("Tag: ", tag_list);
         var query = {};
-        if ( category != null & product_type != null & tag_list != null) {            
-             query= {category: category, product_type: product_type, tag_list: {$in: tag_list}};                        
+        if ( category != null & product_type != null & tag_list != null & brand != null) {            
+             query= {category: category, product_type: product_type, tag_list: {$in: tag_list}, brand: brand};                        
          } else if (category != null & product_type != null) {            
             query= {category: category, product_type: product_type};                 
          } else if (category != null &  tag_list != null){

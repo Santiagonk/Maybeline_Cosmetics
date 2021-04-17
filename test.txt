@@ -6,3 +6,6 @@
 
 {product_type: "lipstick", tag_list: {$in: ["Vegan"]}}
 
+{product_type: "lipstick"}
+
+{tag_list: {$in: ["Vegan"]}}
