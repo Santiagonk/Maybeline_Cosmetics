@@ -9,6 +9,12 @@ const productsRouter = require('./routes/views/landing.js');
 const productsApiRouter = require('./routes/api/api');
 //Mocks products file
 const productMock = require('./utils/mocks/mocksproducts');
+// Middlewares Errors Handlers
+const {
+  logErrors,
+  clientErrorHandler,
+  errorHandler
+} = require('./utils/middlewares/errorsHandlers');
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({
@@ -28,7 +34,10 @@ app.use("/products", productsRouter);
 app.get('/', function(req, res){
    res.redirect('/main/landing.html');   
 });
-
+// error handlers
+app.use(logErrors);
+app.use(clientErrorHandler);
+app.use(errorHandler);
 // Indicate the server that listen port - Indicar al servidor el puerto que va a escuchar
 const server = app.listen(8000, function() {
     console.log(`Listening at http://localhost:${server.address().port}`)
