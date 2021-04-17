@@ -30,7 +30,7 @@ main{
 }
 .side_menu{
     width: 15rem;
-    height: 80rem;
+    height: 50vw;
 }
 .side_menu_item, .side_menu_subitem {
     padding: 1rem;
@@ -45,6 +45,12 @@ main{
 }
 .side_menu_item a:hover, .side_menu_subitem a:hover {
     color: #B3344F;
+}
+.content{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .element{
     display: flex;
