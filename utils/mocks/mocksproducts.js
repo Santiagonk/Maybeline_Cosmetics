@@ -339,8 +339,8 @@ const productMock = [
 
   
 
-function filteredProductsMock(tag) {
-  return productsMock.filter(product => product.tags.includes(tag));
+function filteredProductsMock(tag_list) {
+  return productMock.filter(product => product.tag_list.includes(tag_list));
 }
 
 class ProductsServiceMock {

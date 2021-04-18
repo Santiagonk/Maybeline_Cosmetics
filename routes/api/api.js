@@ -31,7 +31,7 @@ function productsApi(app) {
           data: products,
           message: "products listed"
         })
-       console.log("In api",products)
+       //console.log("In api",products)
         ;
       } catch (err) {
         next(err);
