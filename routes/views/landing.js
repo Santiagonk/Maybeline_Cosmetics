@@ -6,7 +6,7 @@ const productService = new ProductService();
 
 router.get("/", async function(req, res, next) {
     const { category, product_type, tag_list, brand } = req.query;    
-    console.log("Query: : ", req.query);    
+    //console.log("Query: : ", req.query);    
     try {
       const products = await productService.getProducts({ category, product_type, tag_list, brand});
   
