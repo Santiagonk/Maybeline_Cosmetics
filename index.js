@@ -32,8 +32,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 // routes 
-app.use("/api/v1/products", productsApiRouter);
 app.use("/products", productsRouter);
+productsApiRouter(app);
 app.use("/api/auth", authApiRouter);
 //redirect
 app.get('/', function(req, res){

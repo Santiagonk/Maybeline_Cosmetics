@@ -29,7 +29,8 @@
   },
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
