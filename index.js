@@ -4,6 +4,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const boom = require('@hapi/boom');
 const debug = require("debug")("app:server");
+const helmet = require("helmet")
 const productsRouter = require('./routes/views/landing.js');
 const authApiRouter = require("./routes/api/auth");
 //Api path file api is called api.js
@@ -21,6 +22,7 @@ const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi.js');
 
 const app = express();
 // Middlewares
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true

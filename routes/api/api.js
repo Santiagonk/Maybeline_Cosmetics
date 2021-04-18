@@ -12,7 +12,10 @@ const {productIdSchema,
 
 // JWT strategies
 require("../../utils/auth/strategies/jwt");
- // instante product service
+//cache utilities
+const cacheResponse = require("../../utils/cacheResponse");
+const { FIVE_MINUTES_IN_SECONDS, SIXTY_MINUTES_IN_SECONDS } = require("../../utils/time");
+// instante product service
 function productsApi(app) {
   const router = express.Router();
   app.use("/api/v1/products", router);
@@ -21,29 +24,25 @@ function productsApi(app) {
   
   // GET
   router.get("/", async function(req, res, next) {
-      const { category, product_type, tag_list, brand } = req.query;    
-      //console.log("test in api folder")
-      //console.log("Query: : ", req.query);    
+      cacheResponse(res, FIVE_MINUTES_IN_SECONDS);
+      const { category, product_type, tag_list, brand } = req.query;           
       try {
         const products = await productService.getProducts({ category, product_type, tag_list, brand});
     
         res.status(200).json({
           data: products,
           message: "products listed"
-        })
-       //console.log("In api",products)
-        ;
+        });
       } catch (err) {
         next(err);
       }
     });
   // GET one
   router.get("/:productId", async function(req, res, next) {
-      const { productId } = req.params;
-      //console.log("request: ", req.params);
+      cacheResponse(res, SIXTY_MINUTES_IN_SECONDS);
+      const { productId } = req.params;      
       try {
-        const product = await productService.getProduct({ productId });
-    
+        const product = await productService.getProduct({ productId });    
         res.status(200).json({
           data: product,
           message: "product retrieved"
