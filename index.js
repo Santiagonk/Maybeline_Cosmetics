@@ -4,7 +4,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const app = express();
 const productsRouter = require('./routes/views/landing.js');
-
+const boom = require('@hapi/boom');
 //Api path file api is called api.js
 const productsApiRouter = require('./routes/api/api');
 //Mocks products file
@@ -13,8 +13,10 @@ const productMock = require('./utils/mocks/mocksproducts');
 const {
   logErrors,
   clientErrorHandler,
-  errorHandler
+  errorHandler,
+  wrapErrors
 } = require('./utils/middlewares/errorsHandlers');
+const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi.js');
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({
@@ -34,8 +36,21 @@ app.use("/products", productsRouter);
 app.get('/', function(req, res){
    res.redirect('/main/landing.html');   
 });
+// 404 Page
+app.use(function(req, res, next) {
+  if (isRequestAjaxOrApi(req)) {
+    const {
+      output: { statusCode, payload }
+    } = boom.notFound();
+    res.status(statusCode).json(payload);
+    
+  } else {
+    res.status(404).render("404");    
+  }
+});
 // error handlers
 app.use(logErrors);
+app.use(wrapErrors);
 app.use(clientErrorHandler);
 app.use(errorHandler);
 // Indicate the server that listen port - Indicar al servidor el puerto que va a escuchar

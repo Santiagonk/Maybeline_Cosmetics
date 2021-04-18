@@ -2,7 +2,13 @@ const express = require('express');
 const router = express.Router();
 //Services
 const ProductsService = require("../../services/services");
-// instante product service
+const validation = require("../../utils/middlewares/ValidationHandler");
+const {productIdSchema, 
+      productTagSchema, 
+      createProductSchema, 
+      updateProductSchema} = require('../../utils/schemas/schema');
+
+ // instante product service
 const productService = new ProductsService();
 // GET
 router.get("/", async function(req, res, next) {
@@ -35,7 +41,9 @@ router.get("/:productId", async function(req, res, next) {
     }
   });
 //POST
-router.post("/", async function(req, res, next) {
+router.post("/", 
+    validation(createProductSchema),
+    async function(req, res, next) {
     const { body: product } = req;
     console.log("request: ", product);
     try {
@@ -50,7 +58,10 @@ router.post("/", async function(req, res, next) {
     }
   });
 //PUT
-router.put("/:productId", async function(req, res, next) {
+router.put("/:productId",
+    validation({ productId: productIdSchema }, "params"),
+    validation(updateProductSchema),
+    async function(req, res, next) {
     const { productId } = req.params;
     const { body: product } = req;
     console.log("request: ", req.params, req.body);
@@ -68,7 +79,10 @@ router.put("/:productId", async function(req, res, next) {
     }
   });
 // PATCH (funcionalidad por probar)
-router.patch('/:productId', async function (req, res, next) {
+router.patch('/:productId',    
+    validation({ productId: productIdSchema }, "params"),
+    //validation(updateProductSchema),
+    async function (req, res, next) {
     const { productId } = req.params;
     const { price } = req.query;    
     console.log("Query: : ", req.query); 
