@@ -1,4 +1,5 @@
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
 //Services
 const ProductsService = require("../../services/services");
@@ -6,8 +7,11 @@ const validation = require("../../utils/middlewares/ValidationHandler");
 const {productIdSchema, 
       productTagSchema, 
       createProductSchema, 
-      updateProductSchema} = require('../../utils/schemas/schema');
+      updateProductSchema
+    } = require('../../utils/schemas/schema');
 
+// JWT strategies
+require("../../utils/auth/strategies/jwt");
  // instante product service
 const productService = new ProductsService();
 // GET
@@ -59,6 +63,7 @@ router.post("/",
   });
 //PUT
 router.put("/:productId",
+    passport.authenticate("jwt", { session: false}),
     validation({ productId: productIdSchema }, "params"),
     validation(updateProductSchema),
     async function(req, res, next) {
@@ -79,9 +84,10 @@ router.put("/:productId",
     }
   });
 // PATCH (funcionalidad por probar)
-router.patch('/:productId',    
+router.patch('/:productId',
+    passport.authenticate("jwt", { session: false}),    
     validation({ productId: productIdSchema }, "params"),
-    //validation(updateProductSchema),
+    validation(updateProductSchema),
     async function (req, res, next) {
     const { productId } = req.params;
     const { price } = req.query;    
@@ -99,7 +105,9 @@ router.patch('/:productId',
     }
   });
 //DELETE
-router.delete("/:productId", async function(req, res, next) {
+router.delete("/:productId",
+    passport.authenticate("jwt", { session: false}), 
+    async function(req, res, next) {
     const { productId } = req.params;
     console.log("request: ", req.params);
     try {

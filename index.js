@@ -2,9 +2,9 @@
 const express = require('express');
 const path = require("path");
 const bodyParser = require('body-parser');
-const app = express();
-const productsRouter = require('./routes/views/landing.js');
 const boom = require('@hapi/boom');
+const productsRouter = require('./routes/views/landing.js');
+const authApiRouter = require("./routes/api/auth");
 //Api path file api is called api.js
 const productsApiRouter = require('./routes/api/api');
 //Mocks products file
@@ -17,6 +17,8 @@ const {
   wrapErrors
 } = require('./utils/middlewares/errorsHandlers');
 const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi.js');
+
+const app = express();
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({
@@ -32,6 +34,7 @@ app.set("view engine", "pug");
 // routes 
 app.use("/api/v1/products", productsApiRouter);
 app.use("/products", productsRouter);
+app.use("/api/auth", authApiRouter);
 //redirect
 app.get('/', function(req, res){
    res.redirect('/main/landing.html');   

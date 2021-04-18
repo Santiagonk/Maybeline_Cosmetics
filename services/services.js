@@ -111,7 +111,7 @@ class ProductsService {
     async patchProduct({ productId, price }) {
 
         console.log("product", price)  
-        const updateProductId = await this.mongoDB.update(
+        const updateProductId = await this.mongoDB.updateprice(
             this.collection,
             productId,
             price
