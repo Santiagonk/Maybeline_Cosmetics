@@ -3,6 +3,7 @@ const express = require('express');
 const path = require("path");
 const bodyParser = require('body-parser');
 const boom = require('@hapi/boom');
+const debug = require("debug")("app:server");
 const productsRouter = require('./routes/views/landing.js');
 const authApiRouter = require("./routes/api/auth");
 //Api path file api is called api.js
@@ -58,5 +59,5 @@ app.use(clientErrorHandler);
 app.use(errorHandler);
 // Indicate the server that listen port - Indicar al servidor el puerto que va a escuchar
 const server = app.listen(8000, function() {
-    console.log(`Listening at http://localhost:${server.address().port}`)
+    debug(`Listening at http://localhost:${server.address().port}`)
 });
