@@ -10,10 +10,7 @@ router.get("/", async function(req, res, next) {
     try {
       const products = await productService.getProducts({ category, product_type, tag_list, brand});
   
-      res.status(200).json({
-        data: products,
-        message: "products listed"
-      });
+      //res.render("products", {products});
     } catch (err) {
       next(err);
     }
