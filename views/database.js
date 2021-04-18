@@ -6,7 +6,10 @@
     .then(res => res.json())
     .then(data => {
     console.log(data)
-    console.log(data)
+    console.log(data.data)
+    //console.log(data.data[100].name)
+    //console.log(data.data[100].price)
+    //console.log(data.data[100].image_link)
     })
     }
     traer ()
