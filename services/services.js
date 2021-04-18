@@ -80,7 +80,7 @@ class ProductsService {
         // console.log(proof_querie)
         //const query = (product_type && { product_type: product_type}) || (tag_list  && { tag_list : { $in: tag_list }}) || (category && { category: category}) 
         //const query = tag_list  && { tag_list : { $in: tag_list }};
-        
+        console.log("test in test folder")
         console.log("Final Query: ", query)
         const products = await this.mongoDB.getAll(this.collection, query);
         return products || [];
