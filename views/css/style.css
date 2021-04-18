@@ -13,7 +13,7 @@ body{
     font-family: 'Antonio', sans-serif;
 }
 header{
-    max-width: 100%;
+    width: 80vw;
     height: 10rem;
     padding: 2rem;
     display: flex;
@@ -53,7 +53,7 @@ main{
     color: #B3344F;
 }
 .content{
-    width: 100vw;
+    width: 70vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
