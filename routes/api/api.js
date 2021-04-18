@@ -30,7 +30,9 @@ function productsApi(app) {
         res.status(200).json({
           data: products,
           message: "products listed"
-        });
+        })
+       console.log("In api",products)
+        ;
       } catch (err) {
         next(err);
       }
