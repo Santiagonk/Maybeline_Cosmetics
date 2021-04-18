@@ -21,8 +21,9 @@ html
 				img(src="IMG/home.png")
 			figure: a(href="url")
 				img.logo(src="IMG/logoMNY.png")
-			figure: a(href="url")
-				img(src="IMG/add_shopping_cart.png")
-			figure: a(href="url")
-				img(src="IMG/user.png")
+			.cart_user
+				figure.cart: a(href="url")
+					img(src="IMG/add_shopping_cart.png")
+				figure.userID: a(href="url")
+					img(src="IMG/user.png")
 		block contents
