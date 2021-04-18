@@ -24,6 +24,12 @@ header{
 .logo{
     margin-top: 4.5rem;
 }
+.cart_user{
+    display: flex;
+}
+.cart{
+    padding-right: 2rem;
+}
 main{
     display: flex;
     margin: 1rem 0;
@@ -97,5 +103,11 @@ footer{
     align-items: center;
     justify-content: center;
 }
-
+.title, .subtitle{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin: 25rem;
+    font-size: 7.2rem;
+}
 
