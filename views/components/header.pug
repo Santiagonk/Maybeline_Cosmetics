@@ -3,14 +3,14 @@ mixin element
 	.element
 		.product_image
 			figure
-				img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg")
+				img.img_product(src="IMG/Rejuva-Minerals-Multi-Purpose-Powder-Blush-_-Eye-1.jpeg" alt='Product image')
 		.product_info
 			span
 				p Product:
 				span.product_name 
 				p Brand:
 				p Price:
-				.boton: a(href="url") BUY
+				.boton: a(href="url" alt='Buy button') BUY
 
 doctype html 
 html 
@@ -18,12 +18,12 @@ html
 	body 
 		header
 			figure: a(href="url")
-				img(src="IMG/home.png")
+				img(src="IMG/home.png" alt='Home button')
 			figure: a(href="url")
-				img.logo(src="IMG/logoMNY.png")
+				img.logo(src="IMG/logoMNY.png" alt='Maybebellin New York logo')
 			.cart_user
 				figure.cart: a(href="url")
-					img(src="IMG/add_shopping_cart.png")
+					img(src="IMG/add_shopping_cart.png" alt='Shopping cart button')
 				figure.userID: a(href="url")
-					img(src="IMG/user.png")
+					img(src="IMG/user.png" alt='User login')
 		block contents
