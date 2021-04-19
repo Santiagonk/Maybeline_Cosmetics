@@ -15,68 +15,86 @@ class ProductsService {
         // console.log("Category: ", typeof (category));    
         // console.log("Type: ", product_type );
         // console.log("Tag: ", tag_list);
-        var query = {};
-        if ( category != null & product_type != null & tag_list != null & brand != null) {      
+        // query
+        
+        const query = {};
 
-             query= {category: category, product_type: product_type, tag_list: {$in: tag_list}, brand: brand};
+        if(category) {
+            query.category = category
+        }
 
-         } else if (category != null & product_type != null & tag_list != null) {   
+        if (product_type) {
+             query.product_type = product_type
+        }
 
-            query= {category: category, product_type: product_type, tag_list: {$in: tag_list}};  
+        if (tag_list) {
+            query.tag_list = { $in : tag_list}
+       }
 
-         } else if (category != null &  tag_list != null & brand != null ){
+       if (brand) {
+        query.product_type = product_type
+        }
+        // if ( category != null & product_type != null & tag_list != null & brand != null) {      
 
-            query= {category: category, tag_list: {$in: tag_list}, brand: brand}; 
+        //      query= {category: category, product_type: product_type, tag_list: {$in: tag_list}, brand: brand};
 
-         } else if (category != null &  product_type != null & brand != null ){
+        //  } else if (category != null & product_type != null & tag_list != null) {   
 
-            query= {category: category, product_type: product_type, brand: brand}; 
+        //     query= {category: category, product_type: product_type, tag_list: {$in: tag_list}};  
 
-         } else if (category != null &  product_type != null ){
+        //  } else if (category != null &  tag_list != null & brand != null ){
 
-            query= {category: category, product_type: product_type}; 
+        //     query= {category: category, tag_list: {$in: tag_list}, brand: brand}; 
 
-         } else if (category != null &  tag_list != null ){
+        //  } else if (category != null &  product_type != null & brand != null ){
 
-            query= {category: category, tag_list: {$in: tag_list}}; 
+        //     query= {category: category, product_type: product_type, brand: brand}; 
 
-         } else if (category != null & brand != null ){
+        //  } else if (category != null &  product_type != null ){
 
-            query= {category: category, brand: brand}; 
+        //     query= {category: category, product_type: product_type}; 
 
-         } else if (category != null){
+        //  } else if (category != null &  tag_list != null ){
 
-            query= {category: category}; 
+        //     query= {category: category, tag_list: {$in: tag_list}}; 
 
-         } else if ( product_type != null & tag_list != null & brand != null) {      
+        //  } else if (category != null & brand != null ){
 
-            query= {product_type: product_type, tag_list: {$in: tag_list}, brand: brand};
+        //     query= {category: category, brand: brand}; 
 
-        } else if ( product_type != null & tag_list != null ) {      
+        //  } else if (category != null){
 
-            query= {product_type: product_type, tag_list: {$in: tag_list}};
+        //     query= {category: category}; 
 
-        } else if ( product_type != null & brand != null ) {      
+        //  } else if ( product_type != null & tag_list != null & brand != null) {      
 
-            query= {product_type: product_type, brand: brand};
+        //     query= {product_type: product_type, tag_list: {$in: tag_list}, brand: brand};
 
-        } else if ( product_type != null ) {      
+        // } else if ( product_type != null & tag_list != null ) {      
 
-            query= {product_type: product_type};
+        //     query= {product_type: product_type, tag_list: {$in: tag_list}};
 
-        } else if ( tag_list != null & brand != null) {      
+        // } else if ( product_type != null & brand != null ) {      
 
-            query= { tag_list: {$in: tag_list}, brand: brand};
+        //     query= {product_type: product_type, brand: brand};
 
-        } else if ( tag_list != null) {      
+        // } else if ( product_type != null ) {      
 
-            query= { tag_list: {$in: tag_list}};
+        //     query= {product_type: product_type};
 
-        } else if (brand != null) {      
+        // } else if ( tag_list != null & brand != null) {      
 
-            query= { brand: brand};
+        //     query= { tag_list: {$in: tag_list}, brand: brand};
 
-        }                
+        // } else if ( tag_list != null) {      
+
+        //     query= { tag_list: {$in: tag_list}};
+
+        // } else if (brand != null) {      
+
+        //     query= { brand: brand};
+
+        //}                
         // console.log(proof_querie)
         //const query = (product_type && { product_type: product_type}) || (tag_list  && { tag_list : { $in: tag_list }}) || (category && { category: category}) 
         //const query = tag_list  && { tag_list : { $in: tag_list }};

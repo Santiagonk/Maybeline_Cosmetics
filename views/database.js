@@ -10,9 +10,13 @@
         console.log(data.data[50].name)
         console.log(data.data[50].brand)
         console.log(data.data[50].price)
-        console.log(data.data[50].image_link)
+        console.log(data.data[50].api_featured_image)
         contenido.innerHTML = `
+<<<<<<< HEAD
         <img class="img_product" src="https:${data.data[50].api_featured_image}"/>
+=======
+        <img class="img_product" src=""https:${data.data[50].api_featured_image}"/>
+>>>>>>> 5d5d71aecdb12e119e22136f4d5a9023e010d49f
         <p>Name: ${data.data[50].name}</p>
         <p>Brand: ${data.data[50].brand}</p>
         <p>Price: $ ${data.data[50].price}</p>
