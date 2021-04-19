@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-const content = document.querySelector('.contenido');
-=======
 console.log('Inicializa')
     
 var content = document.querySelector('.content')
@@ -25,13 +22,9 @@ fetch('http://localhost:8000/api/v1/products')
     //for (var i of data.data){
     //    console.log(i.name)
     //}
->>>>>>> 98292542951d04c74d12c1e7a3833ec1d394cda1
 
-console.log(content);
-
-async function traer() {
-    const response = await fetch('http://localhost:8000/api/v1/products')
-        .then((res) => res.json())
-        .then((res) => res.data);
+})
 }
-traer();
+traer ()
+
+// https://salty-beyond-87863.herokuapp.com/api/v1/products
