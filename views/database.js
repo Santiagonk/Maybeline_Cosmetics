@@ -10,9 +10,11 @@
         console.log(data.data[5].name)
         console.log(data.data[5].brand)
         console.log(data.data[5].price)
-        console.log(data.data[5].image_link)
+        console.log("Imagen: ",data.data[100].image_link)
+        var imagen_link = data.data[100].image_link
+        console.log("Imagen 2: ",imagen_link)
         contenido.innerHTML = `
-        <figure></figure><img class="img_product" src="data.data[100].image_link"/></figure>
+        <figure></figure><img class="img_product" src=${data.data[100].image_link}/></figure>
         <p>Name: ${data.data[100].name}</p>
         <p>Brand: ${data.data[100].brand}</p>
         <p>Price: $ ${data.data[100].price}</p>
