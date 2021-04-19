@@ -23,16 +23,12 @@ const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi.js');
 
 const app = express();
 // Middlewares
-<<<<<<< HEAD
-//app.use(helmet());
-=======
 // This sets custom options for the `referrerPolicy` middleware.
 app.use(
   helmet({
     contentSecurityPolicy: false,
   })
 );
->>>>>>> 5d5d71aecdb12e119e22136f4d5a9023e010d49f
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
