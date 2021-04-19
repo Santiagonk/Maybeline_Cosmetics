@@ -13,17 +13,17 @@ mixin element
 				.boton: a(href="url" alt='Buy button') BUY
 
 doctype html 
-html 
+html
 	include head.pug
 	body 
 		header
 			figure: a(href="url")
-				img(src="IMG/home.png" alt='Home button')
+				img.home(src="IMG/home.png" alt='Home button')
 			figure: a(href="url")
 				img.logo(src="IMG/logoMNY.png" alt='Maybebellin New York logo')
 			.cart_user
-				figure.cart: a(href="url")
-					img(src="IMG/add_shopping_cart.png" alt='Shopping cart button')
-				figure.userID: a(href="url")
-					img(src="IMG/user.png" alt='User login')
+				figure: a(href="url")
+					img.cart(src="IMG/add_shopping_cart.png" alt='Shopping cart button')
+				figure: a(href="url")
+					img.userID(src="IMG/user.png" alt='User login')
 		block contents
