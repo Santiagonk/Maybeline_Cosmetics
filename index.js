@@ -4,7 +4,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const boom = require('@hapi/boom');
 const debug = require("debug")("app:server");
-const helmet = require("helmet")
+const helmet = require("helmet");
 const productsRouter = require('./routes/views/landing.js');
 const authApiRouter = require("./routes/api/auth");
 const PORT = process.env.PORT || 3000;
@@ -23,7 +23,12 @@ const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi.js');
 
 const app = express();
 // Middlewares
-app.use(helmet());
+// This sets custom options for the `referrerPolicy` middleware.
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
