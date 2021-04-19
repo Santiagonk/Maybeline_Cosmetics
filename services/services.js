@@ -17,8 +17,8 @@ class ProductsService {
         // console.log("Tag: ", tag_list);
         // query
         
-        const query = {};
-        const limit = 10;
+        var query = {};
+        var limit = 10;
 
         if(category) {
             query.category = category
@@ -33,13 +33,14 @@ class ProductsService {
        }
 
        if (brand) {
-        query.product_type = product_type
+        query.brand = brand
         }
         
         if(results){
-            console.log(Object.values(results));
-            limit = Object.values(results)
+            limit = parseInt(results)
+            
         }
+        
         // if ( category != null & product_type != null & tag_list != null & brand != null) {      
 
         //      query= {category: category, product_type: product_type, tag_list: {$in: tag_list}, brand: brand};
