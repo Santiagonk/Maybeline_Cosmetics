@@ -7,7 +7,7 @@ const debug = require("debug")("app:server");
 const helmet = require("helmet")
 const productsRouter = require('./routes/views/landing.js');
 const authApiRouter = require("./routes/api/auth");
-const { config } = require('./config');
+const PORT = process.env.PORT || 3000;
 //Api path file api is called api.js
 const productsApiRouter = require('./routes/api/api');
 //Mocks products file
@@ -61,6 +61,11 @@ app.use(wrapErrors);
 app.use(clientErrorHandler);
 app.use(errorHandler);
 // Indicate the server that listen port - Indicar al servidor el puerto que va a escuchar
-const server = app.listen(config.PORT || 5000, function() {
-    debug(`Listening at http://localhost:${server.address().port}`)
+// const server = app.listen(config.PORT || 5000, function() {
+//     debug(`Listening at http://localhost:${server.address().port}`)
+// });
+//HEROKU indication
+
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
