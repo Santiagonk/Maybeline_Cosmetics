@@ -9,7 +9,7 @@
     }
 
     const div = document.getElementById('container');
-    const url = 'https://salty-beyond-87863.herokuapp.com/api/v1/products';
+    const url = 'http://localhost:8000/api/v1/products';
 
     fetch(url)
         .then((resp) => resp.json())
