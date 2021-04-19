@@ -11,13 +11,14 @@ class ProductsService {
         this.mongoDB = new MongoLib;
     }
 //GET
-    async getProducts({ category, product_type, tag_list , brand}) { //product_category, product_type, product_tags              
+    async getProducts({ category, product_type, tag_list , brand, results}) { //product_category, product_type, product_tags              
         // console.log("Category: ", typeof (category));    
         // console.log("Type: ", product_type );
         // console.log("Tag: ", tag_list);
         // query
         
         const query = {};
+        const limit = 10;
 
         if(category) {
             query.category = category
@@ -33,6 +34,11 @@ class ProductsService {
 
        if (brand) {
         query.product_type = product_type
+        }
+        
+        if(results){
+            console.log(Object.values(results));
+            limit = Object.values(results)
         }
         // if ( category != null & product_type != null & tag_list != null & brand != null) {      
 
@@ -100,7 +106,7 @@ class ProductsService {
         //const query = tag_list  && { tag_list : { $in: tag_list }};
         //console.log("test in test folder")
         //console.log("Final Query: ", query)
-        const products = await this.mongoDB.getAll(this.collection, query);
+        const products = await this.mongoDB.getAll(this.collection, query, limit);
         return products || [];
     }
 //GET product

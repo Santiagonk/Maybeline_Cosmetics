@@ -25,9 +25,9 @@ function productsApi(app) {
   // GET
   router.get("/", async function(req, res, next) {
       cacheResponse(res, FIVE_MINUTES_IN_SECONDS);
-      const { category, product_type, tag_list, brand } = req.query;           
+      const { category, product_type, tag_list, brand , results} = req.query;           
       try {
-        const products = await productService.getProducts({ category, product_type, tag_list, brand});
+        const products = await productService.getProducts({ category, product_type, tag_list, brand, results});
     
         res.status(200).json({
           data: products,
