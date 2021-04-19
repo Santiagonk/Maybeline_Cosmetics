@@ -11,12 +11,12 @@ class ProductsService {
         this.mongoDB = new MongoLib;
     }
 //GET
-    async getProducts({ category, product_type, tag_list , brand, results}) { //product_category, product_type, product_tags              
+    async getProducts({ category, product_type, tag_list , brand, results, max}) { //product_category, product_type, product_tags              
         // console.log("Category: ", typeof (category));    
         // console.log("Type: ", product_type );
         // console.log("Tag: ", tag_list);
         // query
-        
+         
         var query = {};
         var limit = 10;
 
@@ -41,6 +41,10 @@ class ProductsService {
             
         }
         
+        if (max) {
+            query._id = { $gt : parseInt(max)}
+       }
+       console.log(query) 
         // if ( category != null & product_type != null & tag_list != null & brand != null) {      
 
         //      query= {category: category, product_type: product_type, tag_list: {$in: tag_list}, brand: brand};
