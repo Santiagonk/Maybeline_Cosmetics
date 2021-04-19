@@ -7,10 +7,6 @@
     .then(data => {
         console.log(data)
         console.log(data.data)
-        contenido.innerHTML = `
-            <p>Name: </p>
-            `
-
         console.log(data.data[5].name)
         console.log(data.data[5].brand)
         console.log(data.data[5].price)
