@@ -54,7 +54,7 @@ main{
 }
 .content{
     width: 70vw;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -69,6 +69,18 @@ main{
     justify-content:space-evenly;
     align-items: center;
 }
+.element{
+    display: flex;
+    width: 25rem;
+    height: 40rem;
+    margin: 1.5rem 1.5rem 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4rem;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
 .img_product{
     width: 15rem;
     height: 15rem;

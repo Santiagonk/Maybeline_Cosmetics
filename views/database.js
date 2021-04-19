@@ -7,26 +7,22 @@
     .then(data => {
         console.log(data)
         console.log(data.data)
-        console.log(data.data[5].name)
-        console.log(data.data[5].brand)
-        console.log(data.data[5].price)
-        console.log("Imagen: ",data.data[100].image_link)
-        var imagen_link = data.data[100].image_link
-        console.log("Imagen 2: ",imagen_link)
+        console.log(data.data[50].name)
+        console.log(data.data[50].brand)
+        console.log(data.data[50].price)
+        console.log(data.data[50].image_link)
         contenido.innerHTML = `
-        <figure></figure><img class="img_product" src=${data.data[100].image_link}/></figure>
-        <p>Name: ${data.data[100].name}</p>
-        <p>Brand: ${data.data[100].brand}</p>
-        <p>Price: $ ${data.data[100].price}</p>
+        <img class="img_product" src="${data.data[50].image_link}"/>
+        <p>Name: ${data.data[50].name}</p>
+        <p>Brand: ${data.data[50].brand}</p>
+        <p>Price: $ ${data.data[50].price}</p>
         <div class="boton"><a href="url" alt="Buy button">BUY</a></div></span></div>
         `
-        console.log('Loop de nombres')
-        for (var i of data.data){
-            console.log(i.name)
-        }
+        //console.log('Loop de nombres')
+        //for (var i of data.data){
+        //    console.log(i.name)
+        //}
     
     })
     }
     traer ()
-
-    
