@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const boom = require('@hapi/boom');
 const debug = require("debug")("app:server");
 const helmet = require("helmet");
+var cors = require('cors')
 const productsRouter = require('./routes/views/landing.js');
 const authApiRouter = require("./routes/api/auth");
 const PORT = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ app.use(
     contentSecurityPolicy: false,
   })
 );
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
