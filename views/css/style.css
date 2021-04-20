@@ -76,9 +76,10 @@ main{
     align-items: center;
 }
 .img_product{
-    width: auto;
-    height: auto;
+    width: 15rem;
+    height: 15rem;
     border-radius: 100%;
+    object-fit:cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 p{
@@ -121,4 +122,9 @@ footer{
     justify-content: center;
     margin: 25rem;
     font-size: 7.2rem;
+}
+.notion a{
+    text-decoration: none;
+    color: var(--black);
+    padding-left: 1rem;
 }

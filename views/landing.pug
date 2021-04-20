@@ -1,13 +1,7 @@
 extend components/header.pug 
 block contents
 		main 
-			.side_menu
-				dl 
-					dt.side_menu_item: a(href="url") Category
-						each subitem in menu_category_subitems 	
-							dd.side_menu_subitem: a(href="url")=subitem
-					dt.side_menu_item: a(href="url") Type 
-					dt.side_menu_item: a(href="url") Brand
+			include components/side_nav.pug
 			#container 
 		include components/footer.pug
 		
