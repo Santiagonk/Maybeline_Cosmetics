@@ -23,10 +23,6 @@ header{
     width: 100vw;
     height: 6.5rem;
     padding-right: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 main{
     margin: 0;
@@ -64,7 +60,8 @@ li a:hover{
 .side_menu{
     margin: 0;
     background-color: var(--blanco);
-    width: 25%;
+    width: 15%;
+    display: grid;
     float: left;
     height: 100vw;
 }
@@ -76,7 +73,6 @@ li a:hover{
 }
 .side_menu_item a{
     display: block;
-    with: 6rem;
 }
 .side_menu_subitem{
     font-weight: lighter;
@@ -87,10 +83,10 @@ li a:hover{
 }
 #container{
     width: 75%;
-    float: left;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-left: 40rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
 }
 .element{
     display: flex;
@@ -140,8 +136,9 @@ p{
 	text-decoration: none;
 }
 footer{
-    max-width: 100%;
+    width: 100vw;
     height: 10rem;
+    margin-top: 10rem;
     padding: 2rem;
     display: flex;
     align-items: center;
