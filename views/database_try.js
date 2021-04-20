@@ -2,7 +2,7 @@ console.log('Inicializa')
     
 var display = document.querySelector('.display')
 function traer() {
-fetch('http://localhost:8000/api/v1/products?results=20')
+fetch('http://localhost:8000//api/v1/products?results=20') 
 .then(res => res.json())
 .then(data => {
     console.log(data)
