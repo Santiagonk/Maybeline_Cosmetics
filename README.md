@@ -161,4 +161,10 @@ al siguiente:
 
 ## CONSIDERACIONES
 
-Esta API pertenece al primer proyecto de PLATZI MASTER Cohort 7
+Esta API pertenece al primer proyecto de PLATZI MASTER Cohort 7. 
+Para su realización se tomaron los siguientes cursos de la plataforma Platzi:
+
+* [Curso de SCRUM](https://platzi.com/clases/scrum/)
+* [Curso definitivo de HTML y CSS](https://platzi.com/cursos/html-css/)
+* [Curso de Accesibilidad Web](https://platzi.com/cursos/accesibilidad-web/)
+* [Curso de Express.js](https://platzi.com/cursos/express-js/)
