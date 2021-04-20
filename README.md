@@ -32,50 +32,61 @@ API se encuentra actualmente implementada en Heroku, a la que puedes acceder med
 
 * Postman
 
-### Sobre la API
+### Sobre uso de la API
 
-#### Protocolo
+#### Instalacion
 
-* HTTP - Es una API REST
+1. Clonar repositorio:
 
-#### API endpoints
+2. En terminal de Ubuntu 
 
-* `https://salty-beyond-87863.herokuapp.com/api/v1/products`
+```
+sudo npm install
+```
 
-#### Tipos de petición implementados
+3. Crear archivo `.env` y copiar información del archivo `.env.example` (Verificar archivo `.env` se encuentre listado en `.gitignore`)
 
-* GET
+```
+// CONFIG
+PORT=8000
 
-#### Formato de respuesta
+// MONGO
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_NAME=
 
-* JSON
+// AUTH
+AUTH_ADMIN_USERNAME=
+AUTH_ADMIN_PASSWORD=
+AUTH_ADMIN_EMAIL=
+AUTH_JWT_SECRET=
+```
+#### Ejecutar en modo desarrollo
 
-#### Formas de USO
+En terminal de Ubuntu 
 
-Se pueden realizar los filtros por los siguientes atributos:
+```
+npm run dev
+```
 
-* category
-* product_type
-* tag_list
-* brand
+#### Ejecutar en modo Producción
 
-#### Ejemplos de uso
+En terminal de Ubuntu (WSL2) caso exista un bug ver seccion de bugs:
 
-Ejemplo de filtro por atributo (ejemplo realizado con brand):
+```
+npm run start 
+```
 
-* `https://salty-beyond-87863.herokuapp.com/api/v1/products?brand=maybelline`
+### Explicación funcionamiento
 
-Ejemplo de filtro por atributo (ejemplo realizado con brand):
 
-* `https://salty-beyond-87863.herokuapp.com/api/v1/products?tag_list[]=Vegan`
+### Bugs
 
-Ejemplo con varios filtros:
-
-* `https://salty-beyond-87863.herokuapp.com/api/v1/products?tag_list[]=Vegan`
-
-Ejemplo tomando producto unico mediante el ID:
-
-* `https://salty-beyond-87863.herokuapp.com/api/v1/products/1048`
+```
+ "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+```
 
 ## CONSIDERACIONES
 
