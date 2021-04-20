@@ -119,11 +119,44 @@ En la carpeta **routes** se encuentran, las carpetas **views**(es usada para la 
 
 * En el archivo `api.js` se encuentran las peticiones realizadas a los endpoints solicitados
  
+#### Scripts
+
+En la carpeta **scripts** manejamos la conexion a la base de datos para la autenticación del usuario principal.
+
+#### Services
+
+En la carpeta **services** manejamos la lógica relacionada al negocio. Ejemplo los parametros por los que queremos filtrar.
+
+#### test
+
+En la carpeta **test**, manejamos los archivos de prueba, de la API, servicios y utilidades.
+
+#### utils
+
+En la carpeta **utils** manejamos las utilidades, tales como:
+
+* Autenticacion en carpeta **auth**
+* middlewares en carpet **middlewares**: manejo de errores y validación de datos
+* En la carpeta **mocks** usamos los archivos mocks para los test
+* En la carpeta **schemas** manejamos los esquemas de datos usados para la base de datos
+* adicional se tienen los archivos para el manejo del cache, diferenciar tipo de peticion (AJAX o API), servidor de pruebas, y tiempo de cache.
+
+#### Views
+
+En la carpeta de **vies** se implementan los estaticos, mas información en sección de Frontend.
 ### Bugs
+
+Al poner en marcha el servidor en produccion en Ubuntu o Mac, pasar en el archivo `package.json` el codigo siguiente:
 
 ```
  "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
+```
+al siguiente:
+
+```
+ "scripts": {
+    "start": "NODE_ENV=production node index.js",
 ```
 
 ## CONSIDERACIONES
