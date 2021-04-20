@@ -20,7 +20,7 @@ fetch('http://localhost:8000/api/v1/products?results=20')
         <p>Name: ${data.data[i].name}</p>
         <p>Brand: ${data.data[i].brand}</p>
         <p>Price: $ ${data.data[i].price}</p>
-        <div class="boton"><a href="url" alt="Buy button">BUY</a></div>
+        <div class="boton"><a href="url">BUY</a></div>
         </div>`
     
     }
@@ -29,4 +29,5 @@ fetch('http://localhost:8000/api/v1/products?results=20')
 }
 traer ()
 
-// https://salty-beyond-87863.herokuapp.com/api/v1/products
+// https://salty-beyond-87863.herokuapp.com/api/v1/products?results=20
+// http://localhost:8000/api/v1/products?results=20
