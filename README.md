@@ -7,6 +7,26 @@ El objetivo principal es presentar un portal que muestre los productos de la emp
 En el siguiente link encontraras información sobre los detalles del proyecto, en relación organizacion y requerimientos:
 https://www.notion.so/Maybellin-Cometics-P1-C7-3d262f0014de4cca84093bf38d99d462
 
+## FRONT-END - Documentación de consumo REST API
+
+### Informacion API Consumida
+
+La Información de la API consumida se evidencia en la seccion de BACKEND
+
+### UBICACION DENTRO DE PROYECTO
+
+El codigo del consumo de la API se encuentra en la carpeta **views**, en la que se encuentran los archivos principales `landing.html`, `database.js` y las carpetas:
+* Components: Maneja los archivos HTML para el footer, head y header
+* css: Maneja el archivo de estilos `style.css`
+* IMG: Maneja archivos de imagenes
+
+### FUNCIONAMIENTO DEL FRONT-END
+
+#### Landing HTML
+
+
+#### Archivo principal JavaScript
+
 
 ## BACKEND - Documentación de la REST API
 
