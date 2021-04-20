@@ -3,13 +3,9 @@ html(lang="en")
 	include head.pug
 	body 
 		header
-			figure: a(href="url")
-				img.home(src="IMG/home.png" alt='Home button')
-			figure: a(href="url")
-				img.logo(src="IMG/logoMNY.png" alt='Maybebellin New York logo')
-			.cart_user
-				figure: a(href="url")
-					img.cart(src="IMG/add_shopping_cart.png" alt='Shopping cart button')
-				figure: a(href="url")
-					img.userID(src="IMG/user.png" alt='User login')
+			ul.top_nav 
+				li.title: a(href="url") Maybelline New York |
+				li: a(href="url") Home 
+				li(style="float:right"): a(href="url") Cart 
+				li(style="float:right"): a(href="url") User
 		block contents

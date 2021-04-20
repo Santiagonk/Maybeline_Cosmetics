@@ -1,10 +1,12 @@
 -var menu_category_subitems = ["Blush", "Bronzer", "Eyebrow", "Eyeliner", "Eyeshadow", "Foundation", "Lip liner", "Lipstick", "Mascara", "Nail polish"]  
 
 .side_menu
-	dl 
-		dt.side_menu_item: a(href="url") Category
+	ul.side_nav 
+		li.side_menu_item: a(href="url") Category
 			each subitem in menu_category_subitems 	
-				dd.side_menu_subitem: a(href="url")=subitem
-		dt.side_menu_item: a(href="url") Type 
-		dt.side_menu_item: a(href="url") Brand
+				li.side_menu_subitem: a(href="url")=subitem
+		li.side_menu_item: a(href="url") Type 
+		li.side_menu_item: a(href="url") Brand
+
+		
 block contents
