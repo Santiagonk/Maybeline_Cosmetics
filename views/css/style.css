@@ -10,6 +10,7 @@
     --negro: dimgrey;
     --rosa: #E54266;
     --rojo: #B3344F;
+    --opacity: 1.0;
 }
 .dark_theme{
     --blanco: rgba(0,0,0, 0.9);
@@ -17,6 +18,7 @@
     --negro: white;
     --rosa: #E54266;
     --rojo: #E54266;
+    --opacity: 0.85;
 }
 html{
     font-size: 62.5%;
@@ -131,6 +133,7 @@ li.side_menu_item a:hover, .side_menu_subitem a:hover{
     height: 15rem;
     border-radius: 100%;
     object-fit:cover;
+    opacity: var(--opacity);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 p{
@@ -139,6 +142,9 @@ p{
 }
 .footer{
     color: var(--negro);
+}
+.boton{
+    opacity: var(--opacity);
 }
 .boton a{
 	display: block;
