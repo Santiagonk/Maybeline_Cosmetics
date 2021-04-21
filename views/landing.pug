@@ -2,6 +2,18 @@ extend components/header.pug
 block contents
 		main 
 			include components/side_nav.pug
-			#container 
+			#container
+		script 
+			|var today = new Date();
+			|var time = today.getHours();
+			|if(today <= 20){
+			|	null
+			|}else{
+			|	document.body.classList.toggle("dark_theme");
+			|}
 		include components/footer.pug
-		
+
+		//- var darkmode = document.getElementById("darkmode");
+		//- 	|darkmode.onclick = function(){
+		//- 	|document.body.classList.toggle("dark_theme");
+		//- 	|}

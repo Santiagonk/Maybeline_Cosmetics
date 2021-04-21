@@ -12,9 +12,6 @@
     <header>
       <ul class="top_nav"> 
         <li class="title"><a href="url">Maybelline New York |</a></li>
-        <li><a href="url">Home </a></li>
-        <li style="float:right"><a href="url">Cart </a></li>
-        <li style="float:right"><a href="url">User</a></li>
       </ul>
     </header>
     <main> 
@@ -35,8 +32,17 @@
           <li class="side_menu_item"><a href="url">Brand</a></li>
         </ul>
       </div>
-      <div id="container"> </div>
+      <div id="container"></div>
     </main>
+    <script>
+       var today = new Date();
+      var time = today.getHours();
+      if(today <= 20){
+      	null
+      }else{
+      	document.body.classList.toggle("dark_theme");
+      }
+    </script>
     <footer><span class="footer">Created by Platzi Masters C7 💚 </span><br/><span class="notion"><a href="https://www.notion.so/Maybellin-Cometics-P1-C7-3d262f0014de4cca84093bf38d99d462">Notion notes 📋</a></span></footer>
   </body>
 </html>

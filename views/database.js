@@ -1,8 +1,8 @@
 console.log('Inicializa')
-    
+
 var display = document.querySelector('.display')
 function traer() {
-fetch('https://salty-beyond-87863.herokuapp.com/api/v1/products?offset=20&results=20') 
+fetch('https://salty-beyond-87863.herokuapp.com/api/v1/products?offset=20&results=100') 
 .then(res => res.json())
 .then(data => {
     console.log(data.data)
@@ -20,3 +20,7 @@ fetch('https://salty-beyond-87863.herokuapp.com/api/v1/products?offset=20&result
 })
 }
 traer ()
+
+var today = new Date();
+var time = today.getHours();
+    console.log(today);
