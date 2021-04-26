@@ -194,17 +194,23 @@ footer{
     clear: both;
 }
 .pages a{
+    float: left;   
     color: var(--negro);
-    float: left;
     padding: 1rem;
     text-decoration: none;
     border-radius: 1rem;
     transition: background-color .3s;
-
 }
-.pages a.active{
-    background-color: var(--rosa);
+button{
+    border: none;
+    background-color: var(--blanco);
+    font-family: 'Antonio', sans-serif;
+    border-radius: 1rem;
+}
+.active{
     color: var(--blanco);
+    background-color: var(--rosa);
+    
 }
 .pages a:hover:not(.active){
     background-color: var(--rosa);

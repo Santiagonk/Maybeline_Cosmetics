@@ -20,14 +20,24 @@
       <div id="container"></div>
       <div class="center"> 
         <div class="pages"> 
-          <ul> </ul><a href="landing.html">1</a><a href="/views/pages/landing02.html">2</a><a href="/views/pages/landing03.html">3</a><a href="/views/pages/landing04.html">4</a><a href="/views/pages/landing05.html">5</a><a href="/views/pages/landing06.html">6</a><a href="/views/pages/landing07.html">7</a><a href="/views/pages/landing08.html">8</a><a href="/views/pages/landing09.html">9</a><a href="/views/pages/landing10.html">10</a><a href="/views/pages/landing11.html">&raquo;</a>
+          <button class="btn active"><a href="landing.html">1</a></button>
+          <button class="btn"><a href="/views/pages/landing02.html">2</a></button>
+          <button class="btn"><a href="/views/pages/landing03.html">3</a></button>
+          <button class="btn"><a href="/views/pages/landing04.html">4</a></button>
+          <button class="btn"><a href="/views/pages/landing05.html">5</a></button>
+          <button class="btn"><a href="/views/pages/landing06.html">6</a></button>
+          <button class="btn"><a href="/views/pages/landing07.html">7</a></button>
+          <button class="btn"><a href="/views/pages/landing08.html">8</a></button>
+          <button class="btn"><a href="/views/pages/landing09.html">9</a></button>
+          <button class="btn"><a href="/views/pages/landing10.html">10</a></button>
+          <button class="btn"><a href="/views/pages/landing11.html">&raquo;</a></button>
         </div>
       </div>
     </main>
     <script>
        var today = new Date();
       var time = today.getHours();
-      if(today >= 20){
+      if(today < 20){
       	document.body.classList.toggle("dark_theme");
       }else{
       	

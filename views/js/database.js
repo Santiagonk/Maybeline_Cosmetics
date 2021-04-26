@@ -1,9 +1,9 @@
 console.log('Inicializa')
 
 const API = 'https://salty-beyond-87863.herokuapp.com/api/v1/products'
-// var display = document.querySelector('.display')
+
 function traer() {
-fetch(API + '?offset=0&results=48') 
+fetch(API + '?offset=0&results=48')
 .then(res => res.json())
 .then(data => {
     console.log(data.data)
@@ -16,7 +16,7 @@ fetch(API + '?offset=0&results=48')
         <p class="name">Name: ${data.data[i].name}</p>
         <p class="name">Brand: ${data.data[i].brand}</p>
         <p>Price: $ ${data.data[i].price}</p>
-        <div id="btn" class="boton" value="${API}/${verID}"><a href="${data.data[i].product_link}">view</a></div>
+        <div id="btn" class="boton" onclick="${verID}"><a href="${data.data[i].product_link}">view</a></div>
         </div>`
     }
 })
