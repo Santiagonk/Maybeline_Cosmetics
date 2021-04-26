@@ -123,7 +123,7 @@ li.side_menu_item a:hover, .side_menu_subitem a:hover{
     justify-content:space-evenly;
     align-items: center;
     background-color: var(--blancoalpha);
-    color: var(--negro)
+    color: var(--negro);
 }
 .name{
     text-transform:capitalize;
@@ -172,6 +172,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    clear: both;
 }
 .notion{
     color: var(--negro);
@@ -190,6 +191,7 @@ footer{
 }
 .pages{
     display: inline-block;
+    clear: both;
 }
 .pages a{
     color: var(--negro);
