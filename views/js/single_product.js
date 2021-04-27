@@ -1,5 +1,7 @@
 console.log('Inicializa')
 
+// import llevarId from '../js/database'
+
 const API = 'https://salty-beyond-87863.herokuapp.com/api/v1/products/1';
 function traer() {
 fetch(API)
@@ -26,7 +28,3 @@ fetch(API)
 })
 }
 traer ()
-
-var today = new Date();
-var time = today.getHours();
-    console.log(today);

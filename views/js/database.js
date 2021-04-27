@@ -16,13 +16,21 @@ fetch(API + '?offset=0&results=48')
         <p class="name">Name: ${data.data[i].name}</p>
         <p class="name">Brand: ${data.data[i].brand}</p>
         <p>Price: $ ${data.data[i].price}</p>
-        <div id="btn" class="boton" onclick="${verID}"><a href="${data.data[i].product_link}">view</a></div>
-        </div>`
+        <div id="btn" class="boton ${verID}" onclick="llevarId(${verID})"><a href="#">view</a></div>
+        <a id="${verID}" href="/${verID}">VIEW</a>
+        </div>
+        `
     }
 })
 }
 traer ()
 
-var today = new Date();
-var time = today.getHours();
-    console.log(today);
+function llevarId (id){
+    console.log(id)
+    window.location.href = `/${id}`
+}
+
+
+
+
+
