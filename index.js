@@ -36,7 +36,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 // static files
-app.use("/main",express.static(path.join(__dirname, "views")));
+app.use("/views",express.static(path.join(__dirname, "views")));
 
 // View engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -48,7 +48,7 @@ productsApiRouter(app);
 app.use("/api/auth", authApiRouter);
 //redirect
 app.get('/', function(req, res){
-   res.redirect('/main/landing.html');   
+   res.redirect('/views/landing.html');   
 });
 // 404 Page
 app.use(function(req, res, next) {
